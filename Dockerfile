@@ -2,12 +2,12 @@ FROM  jenkins4eval/jenkins:latest
 LABEL maintainer="dhomane@gmail.com"
 USER jenkins
 WORKDIR /usr/src/work
-COPY get-docker.sh .
+#COPY get-docker.sh .
 COPY gen_certs.sh .
 USER root
 # Install Docker CE inside the container
-RUN sh get-docker.sh
-RUN usermod -aG docker jenkins
+#RUN sh get-docker.sh
+#RUN usermod -aG docker jenkins
 # Generate self-signed certs
 RUN bash gen_certs.sh
 RUN openssl rsa -in server.key -out privkey-rsa.pem
