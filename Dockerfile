@@ -1,5 +1,5 @@
-FROM jenkins/jenkins:lts
-LABEL maintainer="suyash@suyashkumar.com"
+FROM  jenkins4eval/jenkins:latest
+LABEL maintainer="dhomane@gmail.com"
 USER jenkins
 WORKDIR /usr/src/work
 COPY get-docker.sh .
